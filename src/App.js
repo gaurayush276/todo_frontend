@@ -24,22 +24,22 @@ function App() {
     };
 
   const fetchData = () => {
-    axios.get("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/get/").then((r) => settodo(r.data[0]));
+    axios.get("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/get").then((r) => settodo(r.data[0]));
   };
 
   const eleminate = (id)=>{
-    axios.delete('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/delete/' + id ).then( r => {console.log(r)
+    axios.delete('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/delete' + id ).then( r => {console.log(r)
       fetchData(); }
     ).catch( e => console.log(e)) 
   }
 
   const checked = (id)=>{
-    axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put/' + id ).then( r => {console.log(r)
+    axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put' + id ).then( r => {console.log(r)
       fetchData(); }
     ).catch( e => console.log(e)) 
   }
   const unchecked = (id)=>{
-         axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put1/' + id ).then( r => {console.log(r)
+         axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put1' + id ).then( r => {console.log(r)
           fetchData(); }
         ).catch( e => console.log(e)) 
          
