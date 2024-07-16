@@ -24,7 +24,7 @@ function App() {
     };
 
   const fetchData = () => {
-    axios.get("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/get").then((r) => settodo(r.data[0]));
+    axios.get("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/get/").then((r) => settodo(r.data[0]));
   };
 
   const eleminate = (id)=>{
