@@ -16,7 +16,7 @@ function App() {
   const addData = () => {
      
     axios
-      .post("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/post", { task: task })
+      .post("http://localhost:8000/post", { task: task })
       .then( r => {console.log(r)
         fetchData();
         settask("");  }
@@ -24,22 +24,22 @@ function App() {
     };
 
   const fetchData = () => {
-    axios.get("https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/get").then((r) => settodo(r.data[0]));
+    axios.get("http://localhost:8000/get").then((r) => settodo(r.data[0]));
   };
 
   const eleminate = (id)=>{
-    axios.delete('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/delete' + id ).then( r => {console.log(r)
+    axios.delete('http://localhost:8000/delete/' + id ).then( r => {console.log(r)
       fetchData(); }
     ).catch( e => console.log(e)) 
   }
 
   const checked = (id)=>{
-    axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put' + id ).then( r => {console.log(r)
+    axios.put('http://localhost:8000/put' + id ).then( r => {console.log(r)
       fetchData(); }
     ).catch( e => console.log(e)) 
   }
   const unchecked = (id)=>{
-         axios.put('https://todo-backend-hw7wjqqe1-gaurayush276s-projects.vercel.app/put1' + id ).then( r => {console.log(r)
+         axios.put('http://localhost:8000/put1' + id ).then( r => {console.log(r)
           fetchData(); }
         ).catch( e => console.log(e)) 
          
